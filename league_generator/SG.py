@@ -1,12 +1,12 @@
 from random import shuffle
 import copy
-
+import sys
 from league_generator.check_matches import check_matches
 from league_generator.courts import COURTS
 from league_generator.gen_cvs import gen_csv
 
 TOTAL_TEAMS = 40  + 1
-fn = "games_formatted_wednesday.csv"
+fn = "games4.csv"
 check = (TOTAL_TEAMS - 1) / 2
 
 
@@ -58,14 +58,16 @@ def make_set(ms=[], _vs=[], _team_crt=[]):
                 break
     return m, _vs, _team_crt
 
-
-if __name__ == "__main__":
+import time
+def main():
 
     total = []
     vs = []
     tc = []
     for x in range(1, 8):
         print(f"Week {x}")
+        time.sleep(3)
+        
         m1 = None
         while True:
             m1, vs1, tc1 = make_set(_vs=copy.deepcopy(vs), _team_crt=copy.deepcopy(tc))
@@ -102,3 +104,8 @@ if __name__ == "__main__":
     gen_csv(total, TOTAL_TEAMS, fn=fn)
 
     check_matches(fn=fn)
+
+    print("fin")
+    return 0
+# if __name__ == "__main__":
+#     main()
