@@ -5,8 +5,8 @@ from league_generator.check_matches import check_matches
 from league_generator.courts import COURTS
 from league_generator.gen_cvs import gen_csv
 
-TOTAL_TEAMS = 40 + 1
-fn = "40_teams.csv"
+TOTAL_TEAMS = 44 + 1
+fn = "44_teams.csv"
 check = (TOTAL_TEAMS - 1) / 2
 
 
