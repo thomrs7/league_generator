@@ -10,6 +10,7 @@ fn = "games28.csv"
 check = (TOTAL_TEAMS - 1) / 2
 
 
+
 def make_set(ms=[], _vs=[], _team_crt=[]):
     tries = 0
     m = []
